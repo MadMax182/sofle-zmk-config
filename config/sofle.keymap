@@ -26,20 +26,6 @@
             bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
         };
 
-        Underglow_Effect: Underglow_Effect {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "UNDERGLOW_EFFECT";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFR>;
-        };
-
-        Underglow_Speed: Underglow_Speed {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "UNDERGLOW_SPEED";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_SPI>, <&rgb_ug RGB_SPD>;
-        };
-
         INC_HB: INC_HB {
             compatible = "zmk,behavior-mod-morph";
             label = "INC_HB";
@@ -84,6 +70,47 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        LEFT_DOWN: LEFT_DOWN {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_DOWN";
+            bindings = <&kp LEFT>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        NAV: NAV {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "NAV";
+            #sensor-binding-cells = <0>;
+            bindings = <&RIGHT_UP>, <&LEFT_DOWN>;
+        };
+
+        INC_ES: INC_ES {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INC_ES";
+            bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_SPI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        DEC_ES: DEC_ES {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DEC_ES";
+            bindings = <&rgb_ug RGB_EFR>, <&rgb_ug RGB_SPD>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ES: ES {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ES";
+            #sensor-binding-cells = <0>;
+            bindings = <&INC_ES>, <&DEC_ES>;
+        };
     };
 
     keymap {
@@ -95,26 +122,26 @@
 &kp GRAVE         &kp N1         &kp N2        &kp N3      &kp N4        &kp N5                                             &kp N6       &kp N7     &kp N8         &kp N9     &kp N0  &kp LEFT_BRACKET
 &kp BACKSLASH     &kp SQT        &kp COMMA     &kp PERIOD  &kp P         &kp Y                                              &kp F        &kp G      &kp C          &kp R      &kp L   &kp RIGHT_BRACKET
 &kp LEFT_CONTROL  &kp A          &kp O         &kp E       &kp U         &kp I                                              &kp D        &kp H      &kp T          &kp N      &kp S   &kp MINUS
-&kp LEFT_ALT      &kp SEMICOLON  &kp Q         &kp J       &kp K         &kp X                     &kp C_MUTE    &to 0      &kp B        &kp M      &kp W          &kp V      &kp Z   &kp SLASH
-                                 &kp LEFT_WIN  &gresc      &lt 1 ESCAPE  &mt LEFT_SHIFT BACKSPACE  &kp DELETE    &lt 3 TAB  &lt 1 SPACE  &kp ENTER  &kp BACKSPACE  &kp EQUAL
+&kp LEFT_ALT      &kp SEMICOLON  &kp Q         &kp J       &kp K         &kp X                     &kp C_MUTE    &to 1      &kp B        &kp M      &kp W          &kp V      &kp Z   &kp SLASH
+                                 &kp LEFT_WIN  &gresc      &lt 2 ESCAPE  &mt LEFT_SHIFT BACKSPACE  &kp DELETE    &lt 3 TAB  &lt 2 SPACE  &kp ENTER  &kp BACKSPACE  &kp EQUAL
             >;
 
-            sensor-bindings = <&Volume>, <&none>;
+            sensor-bindings = <&Volume>, <&NAV>;
 
             label = "DV";
         };
 
         Function {
             bindings = <
-&kp ESCAPE  &kp F1             &kp F2           &kp F3        &kp F4        &kp F5                             &kp F6  &kp F7    &kp F8        &kp F9     &kp F10  &kp F11
-&caps_word  &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &trans  &trans    &kp UP_ARROW  &trans     &trans   &kp F12
-&trans      &ext_power EP_TOG  &rgb_ug RGB_TOG  &trans        &trans        &trans                             &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans   &trans
-&trans      &trans             &rgb_ug RGB_EFF  &trans        &trans        &trans        &soft_off    &trans  &trans  &trans    &trans        &trans     &trans   &trans
-                               &trans           &trans        &trans        &trans        &trans       &trans  &trans  &trans    &trans        &trans
+&kp ESCAPE  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                              &kp F6  &kp F7    &kp F8        &kp F9     &kp F10  &kp F11
+&caps_word  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &trans  &trans    &kp UP_ARROW  &trans     &trans   &kp F12
+&trans      &trans        &trans        &trans        &trans        &trans                                              &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans   &trans
+&trans      &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &trans        &rgb_ug RGB_TOG    &ext_power EP_TOG  &trans  &trans    &trans        &trans     &trans   &trans
+                          &trans        &trans        &trans        &trans        &trans             &trans             &trans  &trans    &trans        &trans
             >;
 
             label = "FN";
-            sensor-bindings = <&HSB>, <&none>;
+            sensor-bindings = <&HSB>, <&ES>;
         };
 
         Keypad {

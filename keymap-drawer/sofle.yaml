@@ -44,7 +44,7 @@ layers:
   - K
   - X
   - MUTE
-  - {t: DV, h: toggle}
+  - {t: FN, h: toggle}
   - B
   - M
   - W
@@ -53,11 +53,11 @@ layers:
   - /
   - LEFT WIN
   - {t: Esc, s: '`'}
-  - {t: ESCAPE, h: FN}
+  - {t: ESCAPE, h: Pad}
   - {t: BACKSPACE, h: LEFT SHIFT}
   - DELETE
   - {t: ↹, h: US}
-  - {t: ␣, h: FN}
+  - {t: ␣, h: Pad}
   - ENTER
   - BACKSPACE
   - '='
@@ -87,8 +87,8 @@ layers:
   - {t: ▽, type: trans}
   - F12
   - {t: ▽, type: trans}
-  - EP TOG
-  - {t: '$$mdi:led-on$$', h: '$$mdi:toggle-switch$$', s: '$$mdi:led-outline$$', type: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -99,22 +99,22 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
   - {t: ▽, type: trans}
-  - {t: '$$mdi:led-on$$', h: '$$mdi:page-previous-outline$$', type: tap_dance}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&soft_off'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:led-on$$', h: '$$mdi:toggle-switch$$', s: '$$mdi:led-outline$$', type: toggle}
+  - EP TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -175,7 +175,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

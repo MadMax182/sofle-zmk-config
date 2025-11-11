@@ -21,9 +21,6 @@
 <svg id="mdi:led-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-led-outline" viewBox="0 0 24 24"><path d="M12,6A4,4 0 0,0 8,10V16H6V18H9V23H11V18H13V23H15V18H18V16H16V10A4,4 0 0,0 12,6M12,8A2,2 0 0,1 14,10V15H10V10A2,2 0 0,1 12,8Z" /></svg>
 </svg>
-<svg id="mdi:page-previous-outline">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-page-previous-outline" viewBox="0 0 24 24"><path d="M2,3H19A2,2 0 0,1 21,5V9H19V5H2V19H19V15H21V19A2,2 0 0,1 19,21H2A2,2 0 0,1 0,19V5A2,2 0 0,1 2,3M17,15V13H24V11H17V9L13,12L17,15M4,13H11V11H4V13M4,9H11V7H4V9M4,17H8V15H4V17Z" /></svg>
-</svg>
 <svg id="mdi:toggle-switch">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-toggle-switch" viewBox="0 0 24 24"><path d="M17,7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7M17,15A3,3 0 0,1 14,12A3,3 0 0,1 17,9A3,3 0 0,1 20,12A3,3 0 0,1 17,15Z" /></svg>
 </svg>
@@ -425,8 +422,8 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(525, 210)" class="key keypos-43">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<a href="#DV">
-<text x="0" y="0" class="key tap layer-activator">DV</text>
+<a href="#FN">
+<text x="0" y="0" class="key tap layer-activator">FN</text>
 </a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(588, 210)" class="key keypos-44">
@@ -467,8 +464,8 @@ rect.held, rect.combo.held {
 <g transform="translate(252, 259)" class="key keypos-52">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">ESCAPE</text>
-<a href="#FN">
-<text x="0" y="24" class="key hold layer-activator">FN</text>
+<a href="#Pad">
+<text x="0" y="24" class="key hold layer-activator">Pad</text>
 </a></g>
 <g transform="translate(316, 274) rotate(22.5)" class="key keypos-53">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -488,8 +485,8 @@ rect.held, rect.combo.held {
 <g transform="translate(580, 274) rotate(-22.5)" class="key keypos-56">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">␣</text>
-<a href="#FN">
-<text x="0" y="24" class="key hold layer-activator">FN</text>
+<a href="#Pad">
+<text x="0" y="24" class="key hold layer-activator">Pad</text>
 </a></g>
 <g transform="translate(644, 259)" class="key keypos-57">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -622,17 +619,13 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(84, 175)" class="key keypos-25">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">EP</tspan><tspan x="0" dy="1.2em">TOG</tspan>
-</text>
+<g transform="translate(84, 175)" class="key trans keypos-25">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(140, 147)" class="key toggle keypos-26">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key toggle"/>
-<use href="#mdi:led-on" xlink:href="#mdi:led-on" x="-9" y="-9" height="18" width="18.0" class="key toggle tap glyph mdi:led-on"/>
-<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="9" height="15" width="15.0" class="key toggle hold glyph mdi:toggle-switch"/>
-<use href="#mdi:led-outline" xlink:href="#mdi:led-outline" x="-8" y="-24" height="15" width="15.0" class="key toggle shifted glyph mdi:led-outline"/>
+<g transform="translate(140, 147)" class="key trans keypos-26">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(196, 140)" class="key trans keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -674,34 +667,37 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(84, 231)" class="key trans keypos-37">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(84, 231)" class="key keypos-37">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Ctl+Z</text>
 </g>
-<g transform="translate(140, 203)" class="key tap_dance keypos-38">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key tap_dance"/>
-<use href="#mdi:led-on" xlink:href="#mdi:led-on" x="-9" y="-9" height="18" width="18.0" class="key tap_dance tap glyph mdi:led-on"/>
-<use href="#mdi:page-previous-outline" xlink:href="#mdi:page-previous-outline" x="-8" y="9" height="15" width="15.0" class="key tap_dance hold glyph mdi:page-previous-outline"/>
+<g transform="translate(140, 203)" class="key keypos-38">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Ctl+X</text>
 </g>
-<g transform="translate(196, 196)" class="key trans keypos-39">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(196, 196)" class="key keypos-39">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Ctl+C</text>
 </g>
-<g transform="translate(252, 203)" class="key trans keypos-40">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(252, 203)" class="key keypos-40">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Ctl+V</text>
 </g>
 <g transform="translate(308, 210)" class="key trans keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(371, 210)" class="key keypos-42">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 67%">&amp;soft_off</tspan></text>
+<g transform="translate(371, 210)" class="key toggle keypos-42">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key toggle"/>
+<use href="#mdi:led-on" xlink:href="#mdi:led-on" x="-9" y="-9" height="18" width="18.0" class="key toggle tap glyph mdi:led-on"/>
+<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="9" height="15" width="15.0" class="key toggle hold glyph mdi:toggle-switch"/>
+<use href="#mdi:led-outline" xlink:href="#mdi:led-outline" x="-8" y="-24" height="15" width="15.0" class="key toggle shifted glyph mdi:led-outline"/>
 </g>
-<g transform="translate(525, 210)" class="key trans keypos-43">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(525, 210)" class="key keypos-43">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">EP</tspan><tspan x="0" dy="1.2em">TOG</tspan>
+</text>
 </g>
 <g transform="translate(588, 210)" class="key trans keypos-44">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -735,8 +731,9 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(252, 259)" class="key held keypos-52">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
+<g transform="translate(252, 259)" class="key trans keypos-52">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(316, 274) rotate(22.5)" class="key trans keypos-53">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -979,9 +976,8 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(252, 259)" class="key trans keypos-52">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(252, 259)" class="key held keypos-52">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
 </g>
 <g transform="translate(316, 274) rotate(22.5)" class="key trans keypos-53">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
