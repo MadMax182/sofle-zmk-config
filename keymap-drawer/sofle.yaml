@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: sofle}
 layers:
-  DVRK:
+  DV:
   - '`'
   - '1'
   - '2'
@@ -12,8 +12,8 @@ layers:
   - '8'
   - '9'
   - '0'
-  - '='
-  - ESCAPE
+  - '['
+  - \
   - ''''
   - ','
   - .
@@ -24,8 +24,8 @@ layers:
   - C
   - R
   - L
-  - /
-  - ↹
+  - ']'
+  - LEFT CONTROL
   - A
   - O
   - E
@@ -37,32 +37,32 @@ layers:
   - N
   - S
   - '-'
-  - $$mdi:apple-keyboard-control$$
+  - LEFT ALT
   - ;
   - Q
   - J
   - K
   - X
   - MUTE
-  - {t: DVRK, h: toggle}
+  - {t: DV, h: toggle}
   - B
   - M
   - W
   - V
   - Z
-  - ⏎
-  - LEFT ALT
+  - /
   - LEFT WIN
-  - FUNC
+  - {t: Esc, s: '`'}
+  - {t: ESCAPE, h: FN}
   - {t: BACKSPACE, h: LEFT SHIFT}
   - DELETE
-  - ←
-  - ␣
-  - →
+  - {t: ↹, h: US}
+  - {t: ␣, h: FN}
   - ENTER
-  - {t: DVRK, h: toggle}
-  FUNC:
-  - {t: ▽, type: trans}
+  - BACKSPACE
+  - '='
+  FN:
+  - ESCAPE
   - F1
   - F2
   - F3
@@ -82,16 +82,20 @@ layers:
   - BT 5
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - UP ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F12
   - {t: ▽, type: trans}
-  - EP ON
-  - '&bl BL_ON'
-  - RGB ON
-  - '&bl BL_INC'
-  - {t: '$$mdi:led-outline$$', s: '$$tabler:brightness-down$$', type: sym_by_sym}
+  - EP TOG
+  - {t: '$$mdi:led-on$$', h: '$$mdi:toggle-switch$$', s: '$$mdi:led-outline$$', type: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ←
+  - ↓
+  - →
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -99,11 +103,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - EP OFF
-  - '&bl BL_OFF'
-  - RGB OFF
-  - '&bl BL_DEC'
-  - {t: '$$mdi:led-on$$', s: '$$tabler:brightness-up$$', type: sym_by_sym}
+  - {t: ▽, type: trans}
   - '&soft_off'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -122,7 +122,68 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  QWERTY:
+  Pad:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  US:
   - Esc
   - '1'
   - '2'
@@ -178,7 +239,7 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - {t: ▽, type: trans}
   - ␣
-  - ␣
+  - {t: ␣, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
