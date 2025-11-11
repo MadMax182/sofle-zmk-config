@@ -21,16 +21,6 @@
         ;
 };
 
-/ {
-    chosen {
-        zmk,split-role = &split_peripheral;
-    };
-};
-
-&split {
-    role = "peripheral";
-};
-
 &zmk_power {
     status = "okay";
 };
