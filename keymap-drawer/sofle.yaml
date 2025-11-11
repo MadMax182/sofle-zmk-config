@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: sofle}
 layers:
-  BAS:
-  - Esc
+  DVRK:
+  - '`'
   - '1'
   - '2'
   - '3'
@@ -12,8 +12,8 @@ layers:
   - '8'
   - '9'
   - '0'
-  - '-'
-  - ↹
+  - '='
+  - ESCAPE
   - ''''
   - ','
   - .
@@ -24,8 +24,8 @@ layers:
   - C
   - R
   - L
-  - $$mdi:backspace-outline$$
-  - $$mdi:apple-keyboard-control$$
+  - /
+  - ↹
   - A
   - O
   - E
@@ -36,33 +36,45 @@ layers:
   - T
   - N
   - S
-  - ''''
-  - LEFT ALT
+  - '-'
+  - $$mdi:apple-keyboard-control$$
   - ;
   - Q
   - J
   - K
   - X
   - MUTE
-  - {t: BAS, h: toggle}
+  - {t: DVRK, h: toggle}
   - B
   - M
   - W
   - V
   - Z
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-command$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-control$$
+  - ⏎
+  - LEFT ALT
+  - LEFT WIN
   - FUNC
-  - LEFT SHIFT
+  - {t: BACKSPACE, h: LEFT SHIFT}
+  - DELETE
+  - ←
   - ␣
-  - FUNC
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-command$$
+  - →
+  - ENTER
+  - {t: DVRK, h: toggle}
   FUNC:
   - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - Caps Word
   - BT 1
   - BT 2
   - BT 3
@@ -73,16 +85,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - F12
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&bl BL_TOG'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - EP ON
+  - '&bl BL_ON'
+  - RGB ON
+  - '&bl BL_INC'
+  - {t: '$$mdi:led-outline$$', s: '$$tabler:brightness-down$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -90,21 +99,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - EP OFF
+  - '&bl BL_OFF'
+  - RGB OFF
+  - '&bl BL_DEC'
+  - {t: '$$mdi:led-on$$', s: '$$tabler:brightness-up$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -116,6 +115,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
