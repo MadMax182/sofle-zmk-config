@@ -105,15 +105,15 @@ layers:
   - Ctl+V
   - {t: ▽, type: trans}
   - {t: '$$mdi:led-on$$', h: '$$mdi:toggle-switch$$', s: '$$mdi:led-outline$$', type: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&SOFT_OFF_1s'
   - EP TOG
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&soft_off'
-  - '&studio_unlock'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
