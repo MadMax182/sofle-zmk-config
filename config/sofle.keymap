@@ -123,7 +123,7 @@
 &kp BACKSLASH     &kp SQT        &kp COMMA     &kp PERIOD  &kp P         &kp Y                                              &kp F        &kp G      &kp C          &kp R      &kp L   &kp RIGHT_BRACKET
 &kp LEFT_CONTROL  &kp A          &kp O         &kp E       &kp U         &kp I                                              &kp D        &kp H      &kp T          &kp N      &kp S   &kp MINUS
 &kp LEFT_ALT      &kp SEMICOLON  &kp Q         &kp J       &kp K         &kp X                     &kp C_MUTE    &to 1      &kp B        &kp M      &kp W          &kp V      &kp Z   &kp SLASH
-                                 &kp LEFT_WIN  &gresc      &lt 2 ESCAPE  &mt LEFT_SHIFT BACKSPACE  &kp DELETE    &lt 3 TAB  &lt 2 SPACE  &kp ENTER  &kp BACKSPACE  &kp EQUAL
+                                 &kp LEFT_WIN  &gresc      &lt 1 ESCAPE  &mt LEFT_SHIFT BACKSPACE  &kp DELETE    &lt 3 TAB  &lt 2 SPACE  &kp ENTER  &kp BACKSPACE  &kp EQUAL
             >;
 
             sensor-bindings = <&Volume>, <&NAV>;

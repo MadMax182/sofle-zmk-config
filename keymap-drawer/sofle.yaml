@@ -53,7 +53,7 @@ layers:
   - /
   - LEFT WIN
   - {t: Esc, s: '`'}
-  - {t: ESCAPE, h: Pad}
+  - {t: ESCAPE, h: FN}
   - {t: BACKSPACE, h: LEFT SHIFT}
   - DELETE
   - {t: ↹, h: US}
@@ -114,7 +114,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -175,11 +175,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - KP 0
   - KP DOT
   - {t: ▽, type: trans}
