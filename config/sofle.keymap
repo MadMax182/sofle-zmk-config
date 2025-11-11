@@ -12,25 +12,11 @@
 
 / {
     behaviors {
-        Underglow_Brightness: Underglow_Brightness {
+        HSB: NONE-B_SHFT-H_ALT-S {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "UNDERGLOW_BRIGHTNESS";
+            label = "HSB";
             #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-        };
-
-        Left_Right: Left_Right {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "LEFT_RIGHT";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp LEFT_ARROW>, <&kp RIGHT>;
-        };
-
-        Up_Down: Up_Down {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "UP_DOWN";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp UP>, <&kp DOWN>;
+            bindings = <&INC_HSB>, <&DEC_HSB>;
         };
 
         Volume: Volume {
@@ -38,20 +24,6 @@
             label = "VOLUME";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
-        };
-
-        Underglow_Hue: Underglow_Hue {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "UNDERGLOW_HUE";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_HUD>;
-        };
-
-        Underglow_Saturation: Underglow_Saturation {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "UNDERGLOW_SATURATION";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_SAI>, <&rgb_ug RGB_SAD>;
         };
 
         Underglow_Effect: Underglow_Effect {
@@ -66,6 +38,51 @@
             label = "UNDERGLOW_SPEED";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_SPI>, <&rgb_ug RGB_SPD>;
+        };
+
+        INC_HB: INC_HB {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INC_HB";
+            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_HUI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        DEC_HB: DEC_HB {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DEC_HB";
+            bindings = <&rgb_ug RGB_BRD>, <&rgb_ug RGB_HUD>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        INC_HSB: INC_HSB {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INC_HSB";
+            bindings = <&INC_HB>, <&rgb_ug RGB_SAI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        DEC_HSB: DEC_HSB {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DEC_HSB";
+            bindings = <&DEC_HB>, <&rgb_ug RGB_SAD>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        RIGHT_UP: RIGHT_UP {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_UP";
+            bindings = <&kp RIGHT>, <&kp UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -82,7 +99,7 @@
                                  &kp LEFT_WIN  &gresc      &lt 1 ESCAPE  &mt LEFT_SHIFT BACKSPACE  &kp DELETE    &lt 3 TAB  &lt 1 SPACE  &kp ENTER  &kp BACKSPACE  &kp EQUAL
             >;
 
-            sensor-bindings = <&Volume>, <&Left_Right>;
+            sensor-bindings = <&Volume>, <&none>;
 
             label = "DV";
         };
@@ -92,12 +109,12 @@
 &kp ESCAPE  &kp F1             &kp F2           &kp F3        &kp F4        &kp F5                             &kp F6  &kp F7    &kp F8        &kp F9     &kp F10  &kp F11
 &caps_word  &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &trans  &trans    &kp UP_ARROW  &trans     &trans   &kp F12
 &trans      &ext_power EP_TOG  &rgb_ug RGB_TOG  &trans        &trans        &trans                             &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans   &trans
-&trans      &trans             &trans           &trans        &trans        &trans        &soft_off    &trans  &trans  &trans    &trans        &trans     &trans   &trans
+&trans      &trans             &rgb_ug RGB_EFF  &trans        &trans        &trans        &soft_off    &trans  &trans  &trans    &trans        &trans     &trans   &trans
                                &trans           &trans        &trans        &trans        &trans       &trans  &trans  &trans    &trans        &trans
             >;
 
             label = "FN";
-            sensor-bindings = <&inc_dec_kp A B>, <&inc_dec_kp A B>;
+            sensor-bindings = <&HSB>, <&none>;
         };
 
         Keypad {

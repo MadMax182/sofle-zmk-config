@@ -21,6 +21,9 @@
 <svg id="mdi:led-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-led-outline" viewBox="0 0 24 24"><path d="M12,6A4,4 0 0,0 8,10V16H6V18H9V23H11V18H13V23H15V18H18V16H16V10A4,4 0 0,0 12,6M12,8A2,2 0 0,1 14,10V15H10V10A2,2 0 0,1 12,8Z" /></svg>
 </svg>
+<svg id="mdi:page-previous-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-page-previous-outline" viewBox="0 0 24 24"><path d="M2,3H19A2,2 0 0,1 21,5V9H19V5H2V19H19V15H21V19A2,2 0 0,1 19,21H2A2,2 0 0,1 0,19V5A2,2 0 0,1 2,3M17,15V13H24V11H17V9L13,12L17,15M4,13H11V11H4V13M4,9H11V7H4V9M4,17H8V15H4V17Z" /></svg>
+</svg>
 <svg id="mdi:toggle-switch">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-toggle-switch" viewBox="0 0 24 24"><path d="M17,7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7M17,15A3,3 0 0,1 14,12A3,3 0 0,1 17,9A3,3 0 0,1 20,12A3,3 0 0,1 17,15Z" /></svg>
 </svg>
@@ -675,9 +678,10 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(140, 203)" class="key trans keypos-38">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(140, 203)" class="key tap_dance keypos-38">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key tap_dance"/>
+<use href="#mdi:led-on" xlink:href="#mdi:led-on" x="-9" y="-9" height="18" width="18.0" class="key tap_dance tap glyph mdi:led-on"/>
+<use href="#mdi:page-previous-outline" xlink:href="#mdi:page-previous-outline" x="-8" y="9" height="15" width="15.0" class="key tap_dance hold glyph mdi:page-previous-outline"/>
 </g>
 <g transform="translate(196, 196)" class="key trans keypos-39">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
