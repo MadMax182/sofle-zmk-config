@@ -12,7 +12,7 @@
 
 / {
     behaviors {
-        HSB: NONE-B_SHFT-H_ALT-S {
+        HSB: HSB {
             compatible = "zmk,behavior-sensor-rotate";
             label = "HSB";
             #sensor-binding-cells = <0>;
