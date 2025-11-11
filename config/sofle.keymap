@@ -16,7 +16,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "HSB";
             #sensor-binding-cells = <0>;
-            bindings = <&INC_HSB>, <&DEC_HSB>;
+            bindings = <&DEC_HSB>, <&INC_HSB>;
         };
 
         Volume: Volume {
@@ -111,6 +111,14 @@
             #sensor-binding-cells = <0>;
             bindings = <&INC_ES>, <&DEC_ES>;
         };
+
+        SOFT_OFF_1s: SOFT_OFF_1s {
+            compatible = "zmk,behavior-soft-off";
+            label = "SOFT_OFF_1S";
+            #binding-cells = <0>;
+            hold-time-ms = <1000>;
+            split-peripheral-off-on-press;
+        };
     };
 
     keymap {
@@ -133,11 +141,11 @@
 
         Function {
             bindings = <
-&kp ESCAPE  &kp F1        &kp F2        &kp F3          &kp F4        &kp F5                                              &kp F6  &kp F7    &kp F8        &kp F9     &kp F10  &kp F11
-&caps_word  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                                        &trans  &trans    &kp UP_ARROW  &trans     &trans   &kp F12
-&trans      &trans        &trans        &trans          &trans        &trans                                              &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans   &trans
-&trans      &kp LC(Z)     &kp LC(X)     &kp LC(C)       &kp LC(V)     &trans        &rgb_ug RGB_TOG    &ext_power EP_TOG  &trans  &trans    &trans        &trans     &trans   &trans
-                          &soft_off     &studio_unlock  &trans        &trans        &trans             &trans             &trans  &trans    &trans        &trans
+&kp ESCAPE  &kp F1        &kp F2        &kp F3             &kp F4        &kp F5                                   &kp F6  &kp F7    &kp F8        &kp F9     &kp F10  &kp F11
+&caps_word  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                             &trans  &trans    &kp UP_ARROW  &trans     &trans   &kp F12
+&trans      &trans        &trans        &trans             &trans        &trans                                   &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans   &trans
+&trans      &kp LC(Z)     &kp LC(X)     &kp LC(C)          &kp LC(V)     &trans        &rgb_ug RGB_TOG    &trans  &trans  &trans    &trans        &trans     &trans   &trans
+                          &SOFT_OFF_1s  &ext_power EP_TOG  &trans        &trans        &trans             &trans  &trans  &trans    &trans        &trans
             >;
 
             label = "FN";
