@@ -44,7 +44,7 @@ layers:
   - K
   - X
   - MUTE
-  - {t: FN, h: toggle}
+  - Caps Word
   - B
   - M
   - W
@@ -288,7 +288,7 @@ layers:
   - K
   - X
   - MUTE
-  - {t: FN, h: toggle}
+  - Caps Word
   - B
   - M
   - W
