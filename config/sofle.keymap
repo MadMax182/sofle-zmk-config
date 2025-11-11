@@ -16,7 +16,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "HSB";
             #sensor-binding-cells = <0>;
-            bindings = <&INC_HSB>, <&DEC_HSB>;
+            bindings = <&DEC_HSB>, <&INC_HSB>;
         };
 
         Volume: Volume {
