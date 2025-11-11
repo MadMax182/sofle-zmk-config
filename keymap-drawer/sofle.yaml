@@ -112,8 +112,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&soft_off'
+  - '&studio_unlock'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
