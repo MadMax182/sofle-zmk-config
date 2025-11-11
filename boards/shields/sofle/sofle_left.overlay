@@ -17,6 +17,17 @@
         ;
 };
 
+/ {
+    chosen {
+        zmk,split-role = &split_central;
+    };
+};
+
+&split {
+    role = "central";
+};
+
+
 &left_encoder {
     status = "okay";
 };
