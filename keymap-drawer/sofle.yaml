@@ -305,3 +305,6 @@ layers:
   - ENTER
   - BACKSPACE
   - '='
+combos:
+- p: [31, 32, 33, 34]
+  k: {t: DV, h: toggle}

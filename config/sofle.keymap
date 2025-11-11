@@ -121,6 +121,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        home {
+            bindings = <&to 0>;
+            key-positions = <31 32 33 34>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
