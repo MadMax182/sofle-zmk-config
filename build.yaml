@@ -67,11 +67,11 @@ include:
     cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_sofle_right_oled
 
-  # # peripheral_left
-  # - board: nice_nano_v2
-  #   shield: sofle_left_peripheral nice_oled
-  #   cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
-  #   artifact-name: nice_sofle_left_peripheral_oled
+  # peripheral_left
+  - board: nice_nano_v2
+    shield: sofle_left_peripheral nice_oled
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+    artifact-name: nice_sofle_left_peripheral_oled
 
   # ProMicro_Dongle
   - board: nice_nano_v2
