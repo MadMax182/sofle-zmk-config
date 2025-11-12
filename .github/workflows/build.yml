@@ -22,6 +22,10 @@ jobs:
     permissions:
       contents: write
 
+    # Define an output to pass the list of generated files to the 'notify' job
+    outputs:
+      artifact_files: ${{ steps.list_files.outputs.file_list }} 
+
     steps:
       - name: Checkout Repository
         # We need to check out the repo to push changes to it
@@ -38,6 +42,30 @@ jobs:
           # The path where the files will be downloaded (e.g., the root of the runner workspace)
           path: firmware/ 
 
+      - name: List Artifact Files and Create Links
+        id: list_files
+        run: |
+          echo "Generating list of files..."
+          
+          # Define the base URL for raw file downloads, pointing to the committed 'firmware' directory
+          DOWNLOAD_URL="https://github.com/${{ github.repository }}/raw/${{ github.ref_name }}/firmware"
+          
+          # Find all files in the 'firmware/' directory and format them as Discord Markdown links
+          # %P removes the leading 'firmware/' from the filename for a clean list.
+          FILE_LIST=$(find firmware/ -type f -printf '%P\n' | while read -r filename; do
+              # Format: - [**`filename`**](https://.../firmware/filename)
+              echo "    - [**\`$filename\`**]($DOWNLOAD_URL/$filename)"
+          done)
+          
+          # Set the output variable 'file_list'
+          echo "file_list<<EOF" >> $GITHUB_OUTPUT
+          echo "\n**Generated Artifacts (Click to Download):**" >> $GITHUB_OUTPUT
+          echo "$FILE_LIST" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          echo "File list stored in output."
+
+
       - name: Commit and Push Artifacts
         run: |
           # Set up the Git user identity for the commit
@@ -45,7 +73,6 @@ jobs:
           git config user.email "actions@github.com"
           
           # Add all files in the downloaded artifact directory.
-          # -A handles modified, new, and deleted files within the path.
           git add -A firmware/
           
           # Check if there are any changes staged (i.e., new or modified files)
@@ -61,6 +88,7 @@ jobs:
           else
             echo "No changes detected in artifacts. Skipping commit."
           fi
+          
   # 3. Job to send a Discord notification upon completion.
   notify:
     name: Discord Notification
@@ -88,5 +116,7 @@ jobs:
             
             Repository: `${{ github.repository }}`
             Branch: `${{ github.ref_name }}`
+            
+            ${{ needs.commit_artifacts.outputs.artifact_files }}
             
             [View Workflow Run Details](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
