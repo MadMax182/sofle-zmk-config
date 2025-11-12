@@ -1,5 +1,61 @@
+name: Build and Commit Firmware Artifacts
+
 on: [push, workflow_dispatch]
 
 jobs:
+  # 1. Job to run the reusable ZMK workflow.
+  # This job is assumed to upload an artifact named 'firmware-artifacts'.
   build:
+    name: Run ZMK Build
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    
+  # 2. Job to download the artifacts and commit them back to the repository.
+  commit_artifacts:
+    name: Commit Built Files to Repo
+    
+    # This job must wait for the 'build' job to succeed
+    needs: build 
+    runs-on: ubuntu-latest
+
+    # CRUCIAL: The GITHUB_TOKEN needs 'write' permission on 'contents'
+    # to be able to push new commits.
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        # We need to check out the repo to push changes to it
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history is helpful for robust git operations
+          fetch-depth: 0 
+
+      - name: Download Artifacts
+        # Download the artifact that the reusable workflow created
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+          # The path where the files will be downloaded (e.g., the root of the runner workspace)
+          path: firmware/ 
+
+      - name: Commit and Push Artifacts
+        run: |
+          # Set up the Git user identity for the commit
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          # Add all files in the downloaded artifact directory.
+          # -A handles modified, new, and deleted files within the path.
+          git add -A built_firmware/
+          
+          # Check if there are any changes staged (i.e., new or modified files)
+          if ! git diff --staged --quiet; then
+            echo "Committing new firmware artifacts..."
+            # Commit the changes with a clear message
+            git commit -m "chore(build): Update firmware artifacts for ${{ github.sha }}"
+            
+            # Push the changes back to the original branch
+            git push
+          else
+            echo "No changes detected in artifacts. Skipping commit."
+          fi
