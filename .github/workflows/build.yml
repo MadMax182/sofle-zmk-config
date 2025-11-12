@@ -53,6 +53,8 @@ jobs:
             echo "Committing new firmware artifacts..."
             # Commit the changes with a clear message
             git commit -m "chore(build): Update firmware artifacts for ${{ github.sha }}"
+
+            git pull --rebase
             
             # Push the changes back to the original branch
             git push
