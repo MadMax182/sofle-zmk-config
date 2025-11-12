@@ -12,7 +12,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - '['
+  - /
   - \
   - ''''
   - ','
@@ -24,7 +24,7 @@ layers:
   - C
   - R
   - L
-  - ']'
+  - '='
   - LEFT CONTROL
   - A
   - O
@@ -43,14 +43,14 @@ layers:
   - J
   - K
   - X
-  - MUTE
-  - Caps Word
+  - PLAY PAUSE
+  - {t: LEFT SHIFT, h: sticky}
   - B
   - M
   - W
   - V
   - Z
-  - /
+  - ENTER
   - LEFT WIN
   - {t: Esc, s: '`'}
   - {t: ESCAPE, h: FN}
@@ -58,9 +58,9 @@ layers:
   - DELETE
   - {t: ↹, h: US}
   - {t: ␣, h: Pad}
-  - ENTER
-  - BACKSPACE
-  - '='
+  - Caps Word
+  - '['
+  - ']'
   FN:
   - ESCAPE
   - F1
