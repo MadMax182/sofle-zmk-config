@@ -74,13 +74,13 @@ jobs:
 
     steps:
       - name: Send Discord Notification
-        # *** CHANGED TO A RELIABLE ACTION ***
-        uses: popey4567/discord-webhook-action@v1
+        # *** UPDATED TO tsickert/discord-webhook@v7.0.0 ***
+        uses: tsickert/discord-webhook@v7.0.0 
         with:
-          # This action uses 'webhook_url' instead of 'webhook'
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          # This action requires the hyphenated 'webhook-url' parameter
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           
-          # The content parameter is the main message text
+          # Use 'content' for the main message body
           content: |
             :gear: **ZMK Build & Commit Report**
             
