@@ -46,7 +46,7 @@ jobs:
           
           # Add all files in the downloaded artifact directory.
           # -A handles modified, new, and deleted files within the path.
-          git add -A built_firmware/
+          git add -A firmware/
           
           # Check if there are any changes staged (i.e., new or modified files)
           if ! git diff --staged --quiet; then
