@@ -59,3 +59,35 @@ jobs:
           else
             echo "No changes detected in artifacts. Skipping commit."
           fi
+  # 3. Job to send a Discord notification upon completion.
+  notify:
+    name: Discord Notification
+    
+    # Needs both previous jobs to complete before running
+    needs: [build, commit_artifacts]
+    runs-on: ubuntu-latest
+    
+    # 'if: always()' ensures the notification is sent even if the build or commit failed
+    if: always() 
+
+    steps:
+      - name: Send Discord Notification
+        uses: peters-encapsulations/discord-notification-action@v1
+        with:
+          # Reference the secret you must create in your repo settings
+          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          
+          # Determine status based on the final, most important job (commit_artifacts)
+          status: ${{ needs.commit_artifacts.result }} 
+          title: 'ZMK Firmware Build & Commit Report'
+          
+          # Custom message including details about the run
+          message: |
+            **Workflow Concluded**
+            Repository: `${{ github.repository }}`
+            Branch: `${{ github.ref_name }}`
+            
+            > **Build Result:** ${{ needs.build.result }}
+            > **Commit Result:** ${{ needs.commit_artifacts.result }}
+            
+            [View Workflow Run Details](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
