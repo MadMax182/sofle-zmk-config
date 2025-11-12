@@ -53,13 +53,14 @@ jobs:
           # Find all files in the 'firmware/' directory and format them as Discord Markdown links
           # %P removes the leading 'firmware/' from the filename for a clean list.
           FILE_LIST=$(find firmware/ -type f -printf '%P\n' | while read -r filename; do
-              # Format: - [**`filename`**](https://.../firmware/filename)
-              echo "    - [**\`$filename\`**]($DOWNLOAD_URL/$filename)"
+              # FORMATTING CHANGE: Removed the leading spaces and the bullet point (' - ')
+              # Format: [**`filename`**](https://.../firmware/filename)
+              echo "[**\`$filename\`**]($DOWNLOAD_URL/$filename)"
           done)
           
           # Set the output variable 'file_list'
           echo "file_list<<EOF" >> $GITHUB_OUTPUT
-          echo "\n**Generated Artifacts (Click to Download):**" >> $GITHUB_OUTPUT
+          echo "\n**Generated Artifacts (Click to Download):**\n" >> $GITHUB_OUTPUT
           echo "$FILE_LIST" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
           
