@@ -74,22 +74,19 @@ jobs:
 
     steps:
       - name: Send Discord Notification
-        uses: peters-encapsulations/discord-notification-action@v1
+        # *** CHANGED TO A RELIABLE ACTION ***
+        uses: popey4567/discord-webhook-action@v1
         with:
-          # Reference the secret you must create in your repo settings
-          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          # This action uses 'webhook_url' instead of 'webhook'
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           
-          # Determine status based on the final, most important job (commit_artifacts)
-          status: ${{ needs.commit_artifacts.result }} 
-          title: 'ZMK Firmware Build & Commit Report'
-          
-          # Custom message including details about the run
-          message: |
-            **Workflow Concluded**
+          # The content parameter is the main message text
+          content: |
+            :gear: **ZMK Build & Commit Report**
+            
+            **Final Status:** ${{ needs.commit_artifacts.result }} (Build: ${{ needs.build.result }})
+            
             Repository: `${{ github.repository }}`
             Branch: `${{ github.ref_name }}`
-            
-            > **Build Result:** ${{ needs.build.result }}
-            > **Commit Result:** ${{ needs.commit_artifacts.result }}
             
             [View Workflow Run Details](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
