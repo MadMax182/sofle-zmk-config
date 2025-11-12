@@ -295,11 +295,11 @@ layers:
   - V
   - Z
   - /
-  - LEFT WIN
-  - {t: Esc, s: '`'}
-  - {t: ESCAPE, h: FN}
-  - {t: BACKSPACE, h: LEFT SHIFT}
-  - DELETE
+  - '{'
+  - '}'
+  - M
+  - ␣
+  - R
   - {t: ↹, h: US}
   - {t: ␣, h: Pad}
   - ENTER
