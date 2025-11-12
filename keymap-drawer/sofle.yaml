@@ -43,7 +43,7 @@ layers:
   - J
   - K
   - X
-  - PLAY PAUSE
+  - MUTE
   - {t: LEFT SHIFT, h: sticky}
   - B
   - M
@@ -52,12 +52,12 @@ layers:
   - Z
   - ENTER
   - LEFT WIN
-  - {t: Esc, s: '`'}
+  - OUT TOG
   - {t: ESCAPE, h: FN}
   - {t: BACKSPACE, h: LEFT SHIFT}
   - DELETE
-  - {t: ↹, h: US}
-  - {t: ␣, h: Pad}
+  - {t: ↹, h: Pad}
+  - ␣
   - Caps Word
   - '['
   - ']'
@@ -178,8 +178,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - KP 0
   - KP DOT
   - {t: ▽, type: trans}
@@ -239,7 +239,7 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - {t: ▽, type: trans}
   - ␣
-  - {t: ␣, type: held}
+  - ␣
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -300,7 +300,7 @@ layers:
   - M
   - ␣
   - R
-  - {t: ↹, h: US}
+  - {t: DV, h: toggle}
   - {t: ␣, h: Pad}
   - ENTER
   - BACKSPACE
@@ -308,3 +308,5 @@ layers:
 combos:
 - p: [31, 32, 33, 34]
   k: {t: DV, h: toggle}
+- p: [25, 26, 15, 28]
+  k: {t: GAME, h: toggle}
