@@ -155,7 +155,7 @@
 &kp BACKSLASH     &kp SQT        &kp COMMA     &kp PERIOD    &kp P         &kp Y                                                     &kp F      &kp G       &kp C             &kp R              &kp L   &kp SLASH
 &kp LEFT_CONTROL  &kp A          &kp O         &kp E         &kp U         &kp I                                                     &kp D      &kp H       &kp T             &kp N              &kp S   &kp MINUS
 &kp LEFT_ALT      &kp SEMICOLON  &kp Q         &kp J         &kp K         &kp X                     &kp C_MUTE      &sk LEFT_SHIFT  &kp B      &kp M       &kp W             &kp V              &kp Z   &kp ENTER
-                                 &kp LEFT_WIN  &out OUT_TOG  &lt 2 ESCAPE  &mt LEFT_SHIFT BACKSPACE  &lt 3 DELETE    &lt 2 TAB       &kp SPACE  &caps_word  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                                 &kp LEFT_WIN  &out OUT_TOG  &lt 1 ESCAPE  &mt LEFT_SHIFT BACKSPACE  &lt 3 DELETE    &lt 2 TAB       &kp SPACE  &caps_word  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings = <&Volume>, <&NAV>;
@@ -192,8 +192,8 @@
         Shortcuts {
             bindings = <
 &trans  &trans     &trans     &trans     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(A)  &kp LC(S)  &trans     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &kp UP     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(A)  &kp LEFT   &kp DOWN   &kp RIGHT  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                    &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
