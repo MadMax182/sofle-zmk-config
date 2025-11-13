@@ -192,8 +192,8 @@
         Shortcuts {
             bindings = <
 &trans  &trans     &trans     &trans     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(A)  &kp LC(S)  &trans     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &kp UP     &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(A)  &kp LEFT   &kp DOWN   &kp RIGHT  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                    &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
