@@ -6,6 +6,12 @@ if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_DONGLE_XIAO || SHIELD_SOFLE_DONGLE_PRO_MICR
 config ZMK_KEYBOARD_NAME
     default "Sofle"
 
+config BT_DEVICE_NAME
+    default "Sofle"
+
+config BT_DIS_MODEL
+    default "Sofle" 
+
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
