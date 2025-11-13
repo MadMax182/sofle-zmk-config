@@ -53,7 +53,7 @@ layers:
   - ENTER
   - LEFT WIN
   - OUT TOG
-  - {t: ESCAPE, h: Pad}
+  - {t: ESCAPE, h: FN}
   - {t: BACKSPACE, h: LEFT SHIFT}
   - {t: DELETE, h: KEY}
   - {t: ↹, h: Pad}
@@ -114,7 +114,7 @@ layers:
   - {t: ▽, type: trans}
   - POWER
   - EP TOG
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -175,10 +175,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - KP 0
   - KP DOT
