@@ -24,13 +24,11 @@ config ZMK_SPLIT
 
 if ZMK_DISPLAY
 
-config I2C
-    default y
+select I2C
+select SSD1306
 
-config
-
-config SSD1306
-    default y
+#config SSD1306
+#    default y
 
 if SHIELD_SOFLE_DONGLE_XIAO || SHIELD_SOFLE_DONGLE_PRO_MICRO
 
