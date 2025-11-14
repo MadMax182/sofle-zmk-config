@@ -29,3 +29,41 @@
 &right_encoder {
     status = "okay";
 };
+
+// ----------------------------------------------------------
+// I2C Bus Enablement
+// ----------------------------------------------------------
+
+// The Nice!Nano's I2C bus is typically defined by this node label.
+// It uses D2 (SDA) and D3 (SCL), which are the standard pins.
+&pro_micro_i2c {
+    status = "okay";
+
+    // OLED display is usually here @0x3c. We add the trackpad below it.
+
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle-i2c";
+        status = "okay";
+        // I2C address for the Cirque Pinnacle
+        reg = <0x2a>;
+        
+        // Data Ready (DR) pin is essential for I2C mode. We use D4.
+        // We use GPIO_ACTIVE_LOW here to correctly trigger on the rising edge of the pin.
+        dr-gpios = <&pro_micro 4 (GPIO_ACTIVE_LOW)>;
+        
+        // Configuration options
+        sensitivity = "4x";
+        data-mode = "relative";
+    };
+};
+
+
+// ----------------------------------------------------------
+// Split Input Proxy
+// ----------------------------------------------------------
+
+&glidepoint_split {
+    status = "okay";
+    // Link the split device to the physical device on the peripheral
+    device = <&glidepoint>;
+};
