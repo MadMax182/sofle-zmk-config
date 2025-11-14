@@ -29,21 +29,3 @@
 &right_encoder {
     status = "okay";
 };
-
-// ----------------------------------------------------------
-// Split Input Proxy
-// ----------------------------------------------------------
-
-&glidepoint {
-    status = "okay"; // Explicitly enable the physical trackpad device
-};
-
-&glidepoint_split {
-    status = "okay";
-    // Link the split device to the physical device on the peripheral
-    device = <&glidepoint>;
-};
-
-&glidepoint_listener {
-    status = "okay"; // Enable the input-listener so ZMK registers the glidepoint as a sensor
-};
